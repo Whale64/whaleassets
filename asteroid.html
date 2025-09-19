@@ -86,16 +86,17 @@
 
         .bookmarks {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
             width: 100%;
-            justify-content: center;
+            justify-items: center;
         }
 
         .bookmark-item {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: space-between;
             text-align: center;
             text-decoration: none;
             color: #fff;
@@ -104,6 +105,9 @@
             border-radius: 12px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            height: 100%;
+            width: 100%;
+            max-width: 150px;
         }
         .bookmark-item:hover {
             transform: translateY(-5px);
@@ -139,7 +143,15 @@
                 font-size: 1rem;
             }
             .bookmarks {
-                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            .bookmark-item {
+                flex-basis: calc(50% - 0.5rem);
+                max-width: none;
+                height: auto;
             }
         }
     </style>
@@ -207,3 +219,4 @@
     </script>
 </body>
 </html>
+
